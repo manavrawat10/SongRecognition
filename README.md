@@ -5,6 +5,6 @@ He will interact with you.
 
 To run this you need to install
 Requires PyAudio and PySpeech.
--- pip install SpeechRecognition
--- pip install pyaudio
--- pip install bs4
+1. pip install SpeechRecognition
+2. pip install pyaudio
+3. pip install bs4
