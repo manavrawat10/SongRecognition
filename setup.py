@@ -7,7 +7,7 @@ setup(
     author='Manvenddra Rawat',
     author_email='manvenddra.rawat@gmail.com',
     # Needed to actually package something
-    packages=['SongRecognition'],
+    packages=['SongRecognization'],
     # Needed for dependencies
     install_requires=['SpeechRecognition','pyaudio','bs4'],
     # *strongly* suggested for sharing
