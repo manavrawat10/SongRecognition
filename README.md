@@ -1,7 +1,7 @@
 # SongRecognition
 
 This is a simple bot which will search song from the lyrics which you speaks.
-He will interact with you.
+In the end he will ask you to play that song on youtube. He is like your friend ;)
 
 To run this you need to install
 Requires PyAudio and PySpeech.
