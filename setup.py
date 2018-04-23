@@ -9,7 +9,7 @@ setup(
     # Needed to actually package something
     packages=['SongRecognization'],
     # Needed for dependencies
-    install_requires=['SpeechRecognition','pyaudio','bs4'],
+    install_requires=['SpeechRecognition','pyaudio','bs4','requests','pywin32', 'lxml'],
     # *strongly* suggested for sharing
     version='0.1',
     # The license can be anything you like
