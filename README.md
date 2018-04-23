@@ -3,6 +3,8 @@
 This is a simple bot which will search song from the lyrics which you speaks.
 In the end he will ask you to play that song on youtube. He is like your friend ;)
 
+This will work on Windows. In the next release you will get for linux and ubuntu. 
+
 ## Installation
 
 To install Song Recognition package
