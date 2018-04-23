@@ -8,16 +8,15 @@ Created on Sat Jan 20 13:19:24 2018
 #!/usr/bin/env python3
 # Requires PyAudio and PySpeech.
 # pip install SpeechRecognition
-#pip install pyaudio
-#pip install bs4
+# pip install pyaudio
+# pip install bs4
 
 
 import speech_recognition as sr
-from time import ctime
 import time
-import os
 import bs4 as bs
 import requests
+import sys
 #from gtts import gTTS
 import webbrowser
 import platform
@@ -71,21 +70,51 @@ def maddy(data):
     ln="www.youtube.com"+str(link[0])
     speak("Do you want me to play that song for you on youtube ?")
     play=recordAudio()
+    i=0
+    while len(play)==0:
+        if i<3:
+            speak("Sorry I was busy some where else. Can you please say yes or no again.")
+        elif i==3 or i==4:
+            speak("There is lots of background noise. Can you please say yes or no again.")
+        elif i==5:
+            speak("I think this is not the right time. Call me again after sometime.")
+            sys.exit(0)
+        play=recordAudio()
+        i=i+1
+
     if "yes" in play:
         webbrowser.open(ln)
     speak("Thanks for using me... Have a nice day")
 
+
 # initialization
 
 time.sleep(2)
-speak("Hi. May I know your name please:")
+speak("Hi. May I know your name please.")
 name=recordAudio()
+i=0
 while len(name)==0:
-	speak("Hi. May I know your name please:")
-	name=recordAudio()
+    if i<3:
+        speak("May I know your name please.")
+    elif i==3 or i==4:
+        speak("There is lots of background noise. May I know your name please.")
+    elif i==5:
+        speak("I think this is not the right time. Call me again after sometime.")
+        sys.exit(0)
+    name=recordAudio()
+    i=i+1
+    
 speak("Hi "+name+", thats very good name. Can you please sing the song for me once. ")
 data = recordAudio()
+i=0
 while len(data)==0:
-	speak("Sorry I was busy some where else. Can you please sing again.")
-	data=recordAudio()
+    if i<3:
+        speak("Sorry I was busy some where else. Can you please sing again.")
+    elif i==3 or i==4:
+        speak("There is lots of background noise. Can you please sing again.")
+    elif i==5:
+        speak("I think this is not the right time. Call me again after sometime.")
+        sys.exit(0)
+    data=recordAudio()
+    i=i+1
 maddy(data)
