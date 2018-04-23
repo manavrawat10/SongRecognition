@@ -76,16 +76,16 @@ def maddy(data):
     speak("Thanks for using me... Have a nice day")
 
 # initialization
-def start():
-	time.sleep(2)
+
+time.sleep(2)
+speak("Hi. May I know your name please:")
+name=recordAudio()
+while len(name)==0:
 	speak("Hi. May I know your name please:")
 	name=recordAudio()
-	while len(name)==0:
-		speak("Hi. May I know your name please:")
-		name=recordAudio()
-	speak("Hi "+name+", thats very good name. Can you please sing the song for me once. ")
-	data = recordAudio()
-	while len(data)==0:
-		speak("Sorry I was busy some where else. Can you please sing again.")
-		data=recordAudio()
-	maddy(data)
+speak("Hi "+name+", thats very good name. Can you please sing the song for me once. ")
+data = recordAudio()
+while len(data)==0:
+	speak("Sorry I was busy some where else. Can you please sing again.")
+	data=recordAudio()
+maddy(data)
